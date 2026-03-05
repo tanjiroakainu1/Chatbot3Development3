@@ -1,0 +1,137 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  overflow-x: hidden;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: 'DM Sans', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+
+#root {
+  min-height: 100vh;
+  min-height: 100dvh;
+  position: relative;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+@supports (padding: env(safe-area-inset-bottom)) {
+  .safe-bottom {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+  .safe-top {
+    padding-top: env(safe-area-inset-top);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.7;
+  }
+  25% {
+    transform: translate(20px, -25px) scale(1.15);
+    opacity: 1;
+  }
+  50% {
+    transform: translate(-15px, 20px) scale(0.9);
+    opacity: 0.85;
+  }
+  75% {
+    transform: translate(15px, 12px) scale(1.08);
+    opacity: 0.95;
+  }
+}
+
+.animate-float {
+  animation: float ease-in-out infinite;
+}
+
+.particle-dot {
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+}
+
+/* Chat scroll area – responsive and smooth */
+.chat-scroll {
+  -webkit-overflow-scrolling: touch;
+  overflow-x: hidden;
+}
+
+/* ========== Dark-theme scrollbar (scroll up/down) – all scrollable areas ========== */
+html,
+body,
+.chat-scroll,
+.scrollbar-dark {
+  scrollbar-width: thin;
+  scrollbar-gutter: stable;
+  scrollbar-color: rgb(51 65 85) rgb(15 23 42);
+}
+
+/* WebKit (Chrome, Safari, Edge) – vertical scrollbar */
+.chat-scroll::-webkit-scrollbar,
+.scrollbar-dark::-webkit-scrollbar,
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  width: 8px;
+  height: 0;
+}
+
+/* WebKit – horizontal scrollbar */
+.chat-scroll::-webkit-scrollbar:horizontal,
+.scrollbar-dark::-webkit-scrollbar:horizontal,
+html::-webkit-scrollbar:horizontal,
+body::-webkit-scrollbar:horizontal {
+  height: 8px;
+  width: 0;
+}
+
+/* WebKit – track (groove) */
+.chat-scroll::-webkit-scrollbar-track,
+.scrollbar-dark::-webkit-scrollbar-track,
+html::-webkit-scrollbar-track,
+body::-webkit-scrollbar-track {
+  background: rgb(15 23 42);
+  border-radius: 4px;
+}
+
+/* WebKit – thumb (draggable) */
+.chat-scroll::-webkit-scrollbar-thumb,
+.scrollbar-dark::-webkit-scrollbar-thumb,
+html::-webkit-scrollbar-thumb,
+body::-webkit-scrollbar-thumb {
+  background: rgb(51 65 85);
+  border-radius: 4px;
+}
+
+.chat-scroll::-webkit-scrollbar-thumb:hover,
+.scrollbar-dark::-webkit-scrollbar-thumb:hover,
+html::-webkit-scrollbar-thumb:hover,
+body::-webkit-scrollbar-thumb:hover {
+  background: rgb(71 85 105);
+}
+
+.chat-scroll::-webkit-scrollbar-thumb:active,
+.scrollbar-dark::-webkit-scrollbar-thumb:active,
+html::-webkit-scrollbar-thumb:active,
+body::-webkit-scrollbar-thumb:active {
+  background: rgb(100 116 139);
+}
+
+/* WebKit – corner */
+.chat-scroll::-webkit-scrollbar-corner,
+.scrollbar-dark::-webkit-scrollbar-corner,
+html::-webkit-scrollbar-corner,
+body::-webkit-scrollbar-corner {
+  background: rgb(15 23 42);
+}
