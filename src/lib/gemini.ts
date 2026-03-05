@@ -1,12 +1,15 @@
 const GEMINI_BASE = 'https://generativelanguage.googleapis.com/v1beta/models'
 
 const FALLBACK_MODELS = [
-  'gemini-2.5-flash',
   'gemini-2.0-flash',
+  'gemini-2.0-flash-001',
   'gemini-1.5-flash',
   'gemini-1.5-flash-8b',
+  'gemini-1.5-flash-001',
+  'gemini-1.5-flash-8b-001',
   'gemini-1.5-pro',
-  'gemini-pro',
+  'gemini-1.5-pro-001',
+  'gemini-2.5-flash',
 ] as const
 
 export type ContentPart =
